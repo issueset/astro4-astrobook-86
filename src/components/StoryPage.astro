@@ -1,0 +1,18 @@
+---
+interface Props {
+  story: string;
+  hasSidebar: boolean;
+}
+
+const { story, hasSidebar } = Astro.props;
+---
+
+<div>
+  {hasSidebar ? <div>sidebar</div> : null}
+  <div>
+    {story}
+  </div>
+  <div>
+    <slot />
+  </div>
+</div>

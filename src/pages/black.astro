@@ -1,0 +1,15 @@
+---
+import StoryPage from '../components/StoryPage.astro'
+import * as m from '../components/Welcome.stories.ts'
+
+const isAstro = true
+---
+
+<StoryPage story={'components/welcome/Black'} hasSidebar={false}>
+  {
+    isAstro
+      ? (<m.default.component { ...m['Black']?.args } />)
+      : (<m.default.component { ...m['Black']?.args } client:load />)
+  }
+</StoryPage>
+
